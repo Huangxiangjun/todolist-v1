@@ -69,7 +69,7 @@ export default {
       this.todoList = getList
     }
 
-    // if the items were all selected, 和首屏全选按钮有关
+    // 如果不是所有项目都被选中，显示全选按钮
     if(!this.todoList.length) {
       this.isSelectAll = false;
     }
@@ -90,13 +90,10 @@ export default {
       }
     })
   },
-  updated: function() {
-    // this.storage();
-  },
 
   methods: {
-    // ------------------main Function------------------
-    // add single item
+    // -----------------主要功能------------------
+    // 添加项目
     handleAdd: function() {
       this.todoList.unshift({
         id:this.getRandomId(),
@@ -112,7 +109,7 @@ export default {
       })
     },
 
-    // delete single item
+    // 删除项目
     handleDelItem: function(index, id) {
       if(this.todoList[index].id === id) {
         this.todoList.splice(index,1)
@@ -120,7 +117,7 @@ export default {
       this.storage();
     },
 
-    // select and cnacel single item
+    // 选择或取消选择单个项目
     handleSelectItem: function(index, id) {
       if(this.todoList[index].id === id) {
         this.todoList[index].isCheck = !this.todoList[index].isCheck
@@ -128,7 +125,7 @@ export default {
       this.storage();
     },
 
-    // deselect all items 全选情况下取消全选
+    // 全选情况下取消全选
     cancelSelectAll: function() {
       this.todoList.forEach(item => {
         item.isCheck = false;
@@ -136,7 +133,7 @@ export default {
       this.storage();
     },
 
-    // select all items 非全选情况下进行全选
+    // 非全选情况下进行全选
     handleSelectAll: function() {
       this.todoList.forEach(item => {
         item.isCheck = true;
@@ -153,7 +150,7 @@ export default {
       this.storage();
     },
 
-    // ------------------mini Function---------------
+    // ------------------封装功能---------------
     // generate random ID
     getRandomId: function() {
       return Number(Math.random().toString().substr(2,0) + Date.now()).toString(10)
