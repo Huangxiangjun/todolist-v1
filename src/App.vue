@@ -3,7 +3,7 @@
     <div class="header-box">
       <div class="header-left">
         <div class="header-addicon">+</div>
-        <h2>心愿清单</h2>
+        <h2>愿望清单</h2>
       </div>
       <div class="header-right">
         <!-- 显示 全选 或 取消全选 按钮 -->
