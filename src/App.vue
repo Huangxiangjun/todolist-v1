@@ -99,7 +99,7 @@ export default {
         id:this.getRandomId(),
         isCheck:false,
         text:"",
-        time:dayjs(new Date).format("YY-MM-DD HH:mm")
+        time:dayjs(new Date).format("YYYY-MM-DD HH:mm:ss")
       })
 
       // 自动获取焦点
